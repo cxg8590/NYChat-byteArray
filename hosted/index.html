@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: white;
+            color: black;
+            transition: background-color 5s ease;
+        }
+        body.NYC{
+            background-color: black;
+            color: white;
+        }
+        img{
+            position:absolute;
+            bottom:0;
+            width: 100%;
+            height: 0%;
+            transition: height 5s ease;
+        }
+        img.NYC{
+            height: 75%;
+        }
+    </style>
+	<style>
+		textarea {
+			display: block;
+			background-color: #EEEEEE;
+		}
+	</style>
+    <script src="/socket.io/socket.io.js"></script>
+	<script src="/assets/compiled.js"> </script>
+</head>
+<body id="norm">
+	<label for="user">Username:</label>
+	<input id="username" name="user" type="text"/>
+	<input id="connect" type='button' value='connect'/>
+	</br>
+	<label for="message">Message:</label>
+	<input id="message" name="message" type="text"/>
+	<input id="send" type="button" value="send" />
+	<!--</br>
+	<label for="color">Color Hex:</label>
+	<input id="colorHex" name="hex" type="text"/>
+	<input id="change" type='button' value='change'/>
+	</br>-->
+	
+	<textarea id="chat" rows="20" cols="40" readonly> </textarea>
+	
+	<h3>Commands</h3>
+	<p>\me = your username</p>
+	<p>\dNUM = roll a num sided die ex: \d6 \d20</p>
+	<p>\num = how many people are here</p>
+    <p>\imwalkinhere = nyc</p>
+    <img src="https://people.rit.edu/~cxg8590/pics/ny/NYCskyline.png" id="normimg"/>
+</body>
+</html>
